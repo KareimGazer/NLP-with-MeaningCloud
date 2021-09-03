@@ -7,14 +7,14 @@ function formatInfo(inputText) {
   const highlights = inputText.highlights.map((highlight) => highlight.text);
   const concepts = inputText.concepts.map((concept) => {
     const paragraph = concept.type;
-    const found =
-      paragraph.match(regex).length == 1 ? paragraph.match(regex) : "";
+    const found = paragraph.match(regex);
+    //paragraph.match(regex).length == 1 ? paragraph.match(regex) : "";
     return concept.form + ` (${found})`;
   });
   const entities = inputText.entities.map((entity) => {
     const paragraph = entity.type;
-    const found =
-      paragraph.match(regex).length == 1 ? paragraph.match(regex) : "";
+    const found = paragraph.match(regex);
+    // paragraph.match(regex).length == 1 ? paragraph.match(regex) : "";
     return entity.form + ` (${found})`;
   });
 

@@ -12,13 +12,13 @@ var json = {
   time: "now",
 };
 
-const dotenv = require("dotenv");
-// const { info } = require("console");
-dotenv.config();
+// const dotenv = require("dotenv");
+// // const { info } = require("console");
+// dotenv.config();
 
-var key = {
-  application_key: process.env.API_KEY,
-};
+// var key = {
+//   application_key: process.env.API_KEY,
+// };
 
 const app = express();
 app.use(cors());
@@ -57,8 +57,9 @@ const url = "https://api.meaningcloud.com/sentiment-2.1"; // API url
 
 // main data for post req for meaning cloud API
 const data = {
-  key: key.application_key,
+  //key: key.application_key,
   // url for testing boilerplate
+  key: "fc19aa9b81a3379f18d00f553ccf96d8",
   url: "https://blog.waymo.com/2021/08/addressing-transit-mobility-gaps-what.html",
   lang: "en",
 };
@@ -92,6 +93,7 @@ app.post("/analyze", function (req, res) {
   getData(url, data)
     .then((newData) => {
       dataStore = newData;
+      //console.log(newData);
     })
     .then(() => {
       summary = cookInfo();
