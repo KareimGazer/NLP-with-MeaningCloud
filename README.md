@@ -1,5 +1,5 @@
 # NLP-with-MeaningCloud
-a website that allows users to run NLP on articles and blogs
+A website that allows users to run NLP on articles and blogs
 
 The starte template is from [frontend-nanodegree-starter](https://github.com/udacity/fend-webpack-content).
 
