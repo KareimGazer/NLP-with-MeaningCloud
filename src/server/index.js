@@ -93,7 +93,7 @@ app.post("/analyze", function (req, res) {
   getData(url, data)
     .then((newData) => {
       dataStore = newData;
-      //console.log(newData);
+      // console.log(newData);
     })
     .then(() => {
       summary = cookInfo();
@@ -114,7 +114,21 @@ function cookInfo() {
     form: concept.form,
     type: concept.type,
   }));
-  summary = { highlights, entities, concepts };
+  irony = dataStore.irony;
+  subjectivity = dataStore.subjectivity;
+  confidence = dataStore.confidence;
+  agreement = dataStore.agreement;
+  scoreTag = dataStore.scoreTag;
+  summary = {
+    highlights,
+    entities,
+    concepts,
+    irony,
+    subjectivity,
+    confidence,
+    agreement,
+    scoreTag,
+  };
   return summary;
 }
 

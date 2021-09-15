@@ -22,6 +22,12 @@ function formatInfo(inputText) {
   // console.log("highlights", highlights);
   // console.log("concepts", concepts);
   // console.log("entities", entities);
+  const { irony, subjectivity, confidence, agreement, scoreTag } = inputText;
+  const ironyDIV = formatDiv([irony], "Irony: ");
+  const subjectivityDIV = formatDiv([subjectivity], "Subjectivity: ");
+  const confidenceDIV = formatDiv([confidence], "Confidence: ");
+  const agreementDIV = formatDiv([agreement], "Agreement: ");
+  const scoreTagDIV = formatDiv([scoreTag], "ScoreTag: ");
 
   const highlightsDIV = formatDiv(
     highlights,
@@ -37,6 +43,13 @@ function formatInfo(inputText) {
   );
 
   document.getElementById("results").innerHTML = "";
+
+  document.getElementById("results").appendChild(ironyDIV);
+  document.getElementById("results").appendChild(subjectivityDIV);
+  document.getElementById("results").appendChild(confidenceDIV);
+  document.getElementById("results").appendChild(agreementDIV);
+  document.getElementById("results").appendChild(scoreTagDIV);
+
   document.getElementById("results").appendChild(highlightsDIV);
   document.getElementById("results").appendChild(conceptsDIV);
   document.getElementById("results").appendChild(entitiesDIV);
