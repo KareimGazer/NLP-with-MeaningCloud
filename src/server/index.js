@@ -118,7 +118,7 @@ function cookInfo() {
   subjectivity = dataStore.subjectivity;
   confidence = dataStore.confidence;
   agreement = dataStore.agreement;
-  scoreTag = dataStore.scoreTag;
+  scoreTag = dataStore.score_tag;
   summary = {
     highlights,
     entities,
